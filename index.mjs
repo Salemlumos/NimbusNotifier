@@ -1,7 +1,8 @@
+import * as dotenv from 'dotenv'
 import {Client,IntentsBitField} from 'discord.js'
 
-
-const TOKEN = "MTE5NDQ3NDgwNjA3MTAwOTM2MA.G-9p6o.iHpO2yoy2XpJLLBeyZxb_MRHp6tAyFRi0bulpc"
+dotenv.config()
+const TOKEN = process.env.TOKEN
 
 const client = new Client({
     intents:[
@@ -18,10 +19,18 @@ client.on('ready',(c)=>{
     console.log(`Bot started\nLogged in as ${c.user.tag}`)
 })
 
+
+client.on('interactionCreate',(interaction)=>{
+    if(!interaction.isCommand()) return;
+    if(interaction.commandName==="hey"){
+        interaction.reply("Hello my friend!")
+    }
+})
+
 client.on('messageCreate',(msg)=>{
     console.log("Received message -----\nAuthor:"+msg.author.username+"\nContent:"+msg.content)
     if(msg.content.toLowerCase()==="hello"){
-        msg.reply("Hello my friend!")
+        msg.reply("Hiiii!")
     }
 
 })
