@@ -1,3 +1,3 @@
 # NimbusNotifier
 
-This is weather discord bot. Its a tranning project to improve my js skill using them to create a discrod bot.
+This is weather discord bot. It`s a project that i made to help me improve my js skills trough a creation of a discord bot.
